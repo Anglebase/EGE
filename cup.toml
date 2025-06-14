@@ -1,0 +1,33 @@
+name = "EGE"
+version = "0.1.0"
+
+[build]
+target = "static"
+
+[link]
+libs = [
+    "graphics",
+    "gdiplus",
+    "uuid",
+    "msimg32",
+    "gdi32",
+    "imm32",
+    "ole32",
+    "oleaut32",
+    "winmm",
+]
+
+[generator."MinGW Makefiles".link]
+paths = ['$root:lib\mingw64\mingw-w64-gcc-8.1.0-x86_64']
+
+[generator."Visual Studio 17 2022".link]
+paths = [
+    '$root:lib\vs2022\x64',
+    '$root:lib\vs2022\x32',
+]
+
+[generator."Visual Studio 16 2019".link]
+paths = [
+    '$root:lib\vs2019\x64',
+    '$root:lib\vs2019\x32',
+]
